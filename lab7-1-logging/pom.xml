@@ -12,13 +12,13 @@
     <licenses>
         <license>
             <name>The Apache Software License, Version 2.0</name>
-            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
         </license>
     </licenses>
 
 	<properties>
-	    <spring.maven.artifact.version>4.3.25.RELEASE</spring.maven.artifact.version>
-		<egovframework.rte.version>3.10.0</egovframework.rte.version>
+	    <spring.maven.artifact.version>5.3.6</spring.maven.artifact.version>
+        <org.egovframe.rte.version>4.0.0</org.egovframe.rte.version>
 	</properties>
 
 	<repositories>
@@ -47,9 +47,9 @@
 	<dependencies>
 		<!-- Start of eGovFrame Runtime Environment -->
         <dependency>
-		    <groupId>egovframework.rte</groupId>
-		    <artifactId>egovframework.rte.ptl.mvc</artifactId>
-		    <version>${egovframework.rte.version}</version>
+		    <groupId>org.egovframe.rte</groupId>
+		    <artifactId>org.egovframe.rte.ptl.mvc</artifactId>
+		    <version>${org.egovframe.rte.version}</version>
 		    <exclusions>
 		    	<exclusion>
 		    		<artifactId>commons-logging</artifactId>
@@ -58,19 +58,19 @@
 		    </exclusions>
         </dependency>
         <dependency>
-		    <groupId>egovframework.rte</groupId>
-		    <artifactId>egovframework.rte.psl.dataaccess</artifactId>
-		    <version>${egovframework.rte.version}</version>
+		    <groupId>org.egovframe.rte</groupId>
+		    <artifactId>org.egovframe.rte.psl.dataaccess</artifactId>
+		    <version>${org.egovframe.rte.version}</version>
         </dependency>
         <dependency>
-			<groupId>egovframework.rte</groupId>
-			<artifactId>egovframework.rte.fdl.idgnr</artifactId>
-			<version>${egovframework.rte.version}</version>
+			<groupId>org.egovframe.rte</groupId>
+			<artifactId>org.egovframe.rte.fdl.idgnr</artifactId>
+			<version>${org.egovframe.rte.version}</version>
 		</dependency>
        	<dependency>
-			<groupId>egovframework.rte</groupId>
-			<artifactId>egovframework.rte.fdl.property</artifactId>
-			<version>${egovframework.rte.version}</version>
+			<groupId>org.egovframe.rte</groupId>
+			<artifactId>org.egovframe.rte.fdl.property</artifactId>
+			<version>${org.egovframe.rte.version}</version>
 		</dependency>
 		<!-- End of eGovFrame Runtime Environment -->
 
@@ -107,7 +107,7 @@
 	    <dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-test</artifactId>
-			<version>4.3.25.RELEASE</version>
+			<version>${spring.maven.artifact.version}</version>
 			<scope>test</scope>
 			<exclusions>
 				<exclusion>
@@ -147,8 +147,8 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
                     <configuration>
-                        <source>1.7</source>
-                        <target>1.7</target>
+                        <source>1.8</source>
+                        <target>1.8</target>
                         <encoding>UTF-8</encoding>
                     </configuration>
                 </plugin>

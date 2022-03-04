@@ -1,12 +1,12 @@
 package lab.ex;
 
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 
 public class HelloWorldServiceImpl implements HelloWorldService{
 
-    Logger logger1 = LogManager.getLogger(HelloWorldServiceImpl.class.getName());
+    Logger logger1 = LoggerFactory.getLogger(HelloWorldServiceImpl.class);
 
 	private String name;
 	
