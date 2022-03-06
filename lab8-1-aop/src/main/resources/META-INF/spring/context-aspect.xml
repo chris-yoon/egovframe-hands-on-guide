@@ -4,11 +4,11 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
 				http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd">
 	
-	<bean id="adviceUsingXML" class="lab.ex.AdviceUsingXML" />
+	<bean id="logAspect" class="org.egovframe.lab.ex.LogAspect" />
 
 	<aop:config>
-		<aop:pointcut id="targetMethod" expression="execution(* lab..*Impl.*(..))" />
-		<aop:aspect ref="adviceUsingXML">
+		<aop:pointcut id="targetMethod" expression="execution(* org.egovframe.lab..*Impl.*(..))" />
+		<aop:aspect ref="logAspect">
 			<aop:before pointcut-ref="targetMethod" method="beforeTargetMethod" />
 			<aop:after-returning pointcut-ref="targetMethod" method="afterReturningTargetMethod" returning="retVal" />
 			<aop:after-throwing pointcut-ref="targetMethod" method="afterThrowingTargetMethod" throwing="exception" />

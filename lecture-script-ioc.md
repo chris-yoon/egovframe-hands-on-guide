@@ -1,16 +1,16 @@
 # IoC Container & Dependency Injection
 
-## create project
+## Create Project
 
 - 개발환경의 Package Explorer에서 마우스 우클릭 > New 를 클릭합니다. 프로젝트명을 'lab201-ioc-concept' 이라 입력하고, Group Id에는 'org.egovframe.lab' 이라 입력하고 Next 버튼을 클릭하겠습니다
 - Generate Example 체크 안 된 상태로 그대로 두고 Finish 버튼을 클릭하겠습니다.
 Let me hit finish.
 
-## create package
+## Create Package
 
 - main java source 에 패키지를 생성하겠습니다. 마우스 우클릭 > New > Package, Name 에는 'org.egovframe.lab.ioc' 라 하겠습니다.
 
-## Create class
+## Create Class
 
 - 요즘 스마트폰 없는 사람이 없죠? 스마트폰 하나를 사서, 전화도 걸고, 문자도 보내보는 매우 간단한 프로젝트를 만들어 보겠습니다.
 - 이 프로젝트의 목적은 IoC를 이해하는데 있으니, 그것에만 초점을 맞추어 진행해 볼께요.

@@ -1,6 +1,6 @@
-package lab.ex;
+package org.egovframe.lab.ex;
 
-public interface HelloWorldService {
+public interface HelloService {
 	
 	public String sayHello(String message);
 	public void sayError();

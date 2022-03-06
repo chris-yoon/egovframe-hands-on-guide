@@ -1,16 +1,17 @@
-package lab.ex;
+package org.egovframe.lab.ex;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-public class HelloWorldApp {
+public class HelloApp {
 
 	public static void main(String[] args) throws Exception {
 		String configLocation = "classpath*:META-INF/spring/context-*.xml"; 
 		ApplicationContext context = new ClassPathXmlApplicationContext(configLocation);
-		HelloWorldService helloworld = (HelloWorldService)context.getBean("helloworld");
+		HelloService helloService = (HelloService)context.getBean("helloService");
 		
-		System.out.println("RESULT="+helloworld.sayHello("Nice to meet you!"));
-		helloworld.sayError();
+		System.out.println("RESULT="+helloService.sayHello("Nice to meet you!"));
+		helloService.sayError();
+		System.out.println();
 	}
 }

@@ -1,11 +1,11 @@
-package lab.ex;
+package org.egovframe.lab.ex;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class HelloWorldServiceImpl implements HelloWorldService {
+public class HelloServiceImpl implements HelloService {
 
-	private static final Logger LOGGER = LoggerFactory.getLogger("lab");
+	private static final Logger LOGGER = LoggerFactory.getLogger("org.egovframe.lab.ex");
 
 	private String name;
 

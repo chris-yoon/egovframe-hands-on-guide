@@ -1,27 +1,25 @@
-package lab.ex;
+package org.egovframe.lab.ex;
 
 import java.util.List;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 
-public class AdviceUsingXML {
+public class LogAspect {
 	
-	private static final Logger LOGGER  = LogManager.getLogger(AdviceUsingXML.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(LogAspect.class);
 
 	public void beforeTargetMethod(JoinPoint thisJoinPoint) {
 
-//      @SuppressWarnings("unused")
-//		Class<? extends Object> clazz = thisJoinPoint.getTarget().getClass();
         String className = thisJoinPoint.getTarget().getClass().getSimpleName();
         String methodName = thisJoinPoint.getSignature().getName();
 
         StringBuffer buf = new StringBuffer();
-        buf.append("AdviceUsingXML.beforeTargetMethod : [" + className
+        buf.append("LogAspect.beforeTargetMethod : [" + className
             + "." + methodName + "()]");
         Object[] arguments = thisJoinPoint.getArgs();
         int argCount = 0;
@@ -35,20 +33,17 @@ public class AdviceUsingXML {
     }
 
     public void afterTargetMethod(JoinPoint thisJoinPoint) {
-    	LOGGER.debug("AdviceUsingXML.afterTargetMethod executed.");
+    	LOGGER.debug("LogAspect.afterTargetMethod executed.");
     }
 
 	public void afterReturningTargetMethod(JoinPoint thisJoinPoint,
             Object retVal) {
 
-        @SuppressWarnings("unused")
-		Class<? extends Object> clazz = thisJoinPoint.getTarget().getClass();
         String className = thisJoinPoint.getTarget().getClass().getSimpleName();
         String methodName = thisJoinPoint.getSignature().getName();
 
-        // Currnet class, method and method arguments logging
         StringBuffer buf = new StringBuffer();
-        buf.append("AdviceUsingXML.afterReturningTargetMethod : ["
+        buf.append("LogAspect.afterReturningTargetMethod : ["
             + className + "." + methodName + "()]");
 
         buf.append("\n");
@@ -68,7 +63,7 @@ public class AdviceUsingXML {
 
     public void afterThrowingTargetMethod(JoinPoint thisJoinPoint,
             Exception exception) throws Exception {
-    	LOGGER.debug("AdviceUsingXML.afterThrowingTargetMethod executed.");
+    	LOGGER.debug("LogAspect.afterThrowingTargetMethod executed.");
     	LOGGER.error("An error occured. {}", exception);
 
         throw new Exception("An error occured.", exception);
@@ -76,11 +71,11 @@ public class AdviceUsingXML {
 
     public Object aroundTargetMethod(ProceedingJoinPoint thisJoinPoint)
             throws Throwable {
-    	LOGGER.debug("AdviceUsingXML.aroundTargetMethod start.");
+    	LOGGER.debug("LogAspect.aroundTargetMethod start.");
 
         Object retVal = thisJoinPoint.proceed();
 
-        LOGGER.debug("AdviceUsingXML.aroundTargetMethod end.");
+        LOGGER.debug("LogAspect.aroundTargetMethod end.");
         return retVal;
     }
 

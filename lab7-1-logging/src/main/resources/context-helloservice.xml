@@ -7,7 +7,7 @@
 
 	<context:annotation-config/>
 	
-	<bean name="helloworld" class="lab.ex.HelloWorldServiceImpl">
+	<bean name="helloService" class="org.egovframe.lab.ex.HelloServiceImpl">
 		<property name="name">
 			<value>eGovFrame</value>
 		</property>
