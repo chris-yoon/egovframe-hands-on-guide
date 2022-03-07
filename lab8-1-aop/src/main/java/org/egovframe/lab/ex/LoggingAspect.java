@@ -9,17 +9,17 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 
-public class LogAspect {
+public class LoggingAspect {
 	
-	private static final Logger LOGGER = LoggerFactory.getLogger(LogAspect.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(LoggingAspect.class);
 
-	public void beforeTargetMethod(JoinPoint thisJoinPoint) {
+	public void beforeAdvice(JoinPoint thisJoinPoint) {
 
         String className = thisJoinPoint.getTarget().getClass().getSimpleName();
         String methodName = thisJoinPoint.getSignature().getName();
 
         StringBuffer buf = new StringBuffer();
-        buf.append("LogAspect.beforeTargetMethod : [" + className
+        buf.append("LoggingAspect.beforeAdvice : [" + className
             + "." + methodName + "()]");
         Object[] arguments = thisJoinPoint.getArgs();
         int argCount = 0;
@@ -32,18 +32,18 @@ public class LogAspect {
         LOGGER.debug(buf.toString());
     }
 
-    public void afterTargetMethod(JoinPoint thisJoinPoint) {
-    	LOGGER.debug("LogAspect.afterTargetMethod executed.");
+    public void afterAdvice(JoinPoint thisJoinPoint) {
+    	LOGGER.debug("LoggingAspect.afterAdvice executed.");
     }
 
-	public void afterReturningTargetMethod(JoinPoint thisJoinPoint,
+	public void afterReturningAdvice(JoinPoint thisJoinPoint,
             Object retVal) {
 
         String className = thisJoinPoint.getTarget().getClass().getSimpleName();
         String methodName = thisJoinPoint.getSignature().getName();
 
         StringBuffer buf = new StringBuffer();
-        buf.append("LogAspect.afterReturningTargetMethod : ["
+        buf.append("LoggingAspect.afterReturningAdvice : ["
             + className + "." + methodName + "()]");
 
         buf.append("\n");
@@ -61,21 +61,21 @@ public class LogAspect {
         LOGGER.debug(buf.toString());
     }
 
-    public void afterThrowingTargetMethod(JoinPoint thisJoinPoint,
+    public void afterThrowingAdvice(JoinPoint thisJoinPoint,
             Exception exception) throws Exception {
-    	LOGGER.debug("LogAspect.afterThrowingTargetMethod executed.");
+    	LOGGER.debug("LoggingAspect.afterThrowingAdvice executed.");
     	LOGGER.error("An error occured. {}", exception);
 
         throw new Exception("An error occured.", exception);
     }
 
-    public Object aroundTargetMethod(ProceedingJoinPoint thisJoinPoint)
+    public Object aroundAdvice(ProceedingJoinPoint thisJoinPoint)
             throws Throwable {
-    	LOGGER.debug("LogAspect.aroundTargetMethod start.");
+    	LOGGER.debug("LoggingAspect.aroundAdvice start.");
 
         Object retVal = thisJoinPoint.proceed();
 
-        LOGGER.debug("LogAspect.aroundTargetMethod end.");
+        LOGGER.debug("LoggingAspect.aroundAdvice end.");
         return retVal;
     }
 
