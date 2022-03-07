@@ -328,11 +328,64 @@ public class LoggingAspect {
 - First LOGGER here is before the target method execution
 - Second LOGGER is after the target method execution
 
+## sayError()
+
+- Shall we raise exception by calling sayError() method?
+- go to the HelloServiceImpl class, let's say public void sayError()
+
+```
+	public void sayError() {
+        double i = 100/0;
+	}
+```
+
+- go back to the App class, just call it. helloService.sayError();
+- you can see the log message from adviced target object
+
 ## XML config
 
 - If you want to use XML configuration instead of Annotation, please refer to the training materials
+- for your information, first remove all annotations
+- define bean tag with name and class
+- as for aop configuration, it should be like this
+
+```
+	<bean name="helloService" class="org.egovframe.lab.ex.HelloServiceImpl">
+		<property name="name">
+			<value>eGovFrame</value>
+		</property>
+	</bean>
+```
+
+- before advice is what you want to apply to the specific business logic method.
+- join point is where you want to apply advice. we call join point as target method
+- pointcut is a set of join point
+
+```
+	<bean id="loggingAspect" class="org.egovframe.lab.ex.LoggingAspect" />
+
+	<aop:config>
+		<aop:pointcut id="targetMethod" expression="execution(* org.egovframe.lab..*Impl.*(..))" />
+		<aop:aspect ref="loggingAspect">
+			<aop:before pointcut-ref="targetMethod" method="beforeAdvice" />
+			<aop:after-returning pointcut-ref="targetMethod" method="afterReturningAdvice" returning="retVal" />
+			<aop:after-throwing pointcut-ref="targetMethod" method="afterThrowingAdvice" throwing="exception" />
+			<aop:after pointcut-ref="targetMethod" method="afterAdvice" />
+			<aop:around pointcut-ref="targetMethod" method="aroundAdvice" />
+		</aop:aspect>
+	</aop:config>
+```
+
+## Ending
+
+- Thank you so much for your interest and attention
+- I hope this session would be helpful for your understanding on AOP.
 
 ---
+
+# Additional Information
+
+- 처음부터 Annotation 방식이 아니라, XML 방식으로 시작했을 때 사용하는 강의 스트립트이다.
 
 - bean tag should be defined. name is "helloService"
 - when it comes to class, it should be the full qualified name. so go to the class HelloServiceImpl, right click, Copy qualified Name
@@ -340,8 +393,6 @@ public class LoggingAspect {
 - property name equals "name", value would be "eGovFrame"
 
 ```
-	<context:annotation-config/>
-
 	<bean name="helloService" class="org.egovframe.lab.ex.HelloServiceImpl">
 		<property name="name">
 			<value>eGovFrame</value>
