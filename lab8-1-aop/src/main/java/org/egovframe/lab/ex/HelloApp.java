@@ -12,6 +12,5 @@ public class HelloApp {
 		
 		System.out.println("RESULT="+helloService.sayHello("Nice to meet you!"));
 		helloService.sayError();
-		System.out.println();
 	}
 }

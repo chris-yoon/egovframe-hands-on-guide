@@ -5,7 +5,7 @@
 
 ## Project
 
-- Let me create a project named "lab2-3-aop" (New > eGovFrame Web Project > )
+- Let me create a project named "lab2-4-aop" (New > eGovFrame Web Project > )
 - Group Id is "org.egovframe.lab.ex",
 - Click the next, leave the box unchecked, hit the finish
 - Maven > Add Dependency > type "test" in search box > click the spring-test and ok
