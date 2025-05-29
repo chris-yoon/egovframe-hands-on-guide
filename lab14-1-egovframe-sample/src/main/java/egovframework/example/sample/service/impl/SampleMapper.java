@@ -20,20 +20,22 @@ import java.util.List;
 import egovframework.example.sample.service.SampleDefaultVO;
 import egovframework.example.sample.service.SampleVO;
 
-import egovframework.rte.psl.dataaccess.mapper.Mapper;
+import org.egovframe.rte.psl.dataaccess.mapper.Mapper;
 
 /**
  * Mapper Class for processing sample data
  *
- * @author  eGovFrame Center
+ * @author eGovFrame Center
  * @since 2014.01.24
  * @version 1.0
- * @see <pre>
+ * @see
+ * 
+ *      <pre>
  *  == Modification Information ==
  *
- * @  Modified Date      Modifier    Description
- * @ --------------      ---------   -------------------------------
- * @ 2009.03.16                      Initial Commit
+ * &#64;  Modified Date      Modifier    Description
+ * &#64; --------------      ---------   -------------------------------
+ * &#64; 2009.03.16                      Initial Commit
  *
  * </pre>
  */
@@ -42,6 +44,7 @@ public interface SampleMapper {
 
 	/**
 	 * Insert
+	 * 
 	 * @param vo - Sample Value Object SampleVO
 	 * @return Generated ID
 	 * @exception Exception
@@ -50,6 +53,7 @@ public interface SampleMapper {
 
 	/**
 	 * Update
+	 * 
 	 * @param vo - Sample Value Object SampleVO
 	 * @return void type
 	 * @exception Exception
@@ -58,6 +62,7 @@ public interface SampleMapper {
 
 	/**
 	 * Delete
+	 * 
 	 * @param vo - Sample Value Object SampleVO
 	 * @return void type
 	 * @exception Exception
@@ -66,6 +71,7 @@ public interface SampleMapper {
 
 	/**
 	 * Select single row
+	 * 
 	 * @param vo - Value Object SampleVO
 	 * @return Sample Object
 	 * @exception Exception
@@ -74,6 +80,7 @@ public interface SampleMapper {
 
 	/**
 	 * Select multiple rows
+	 * 
 	 * @param searchVO - Search Condition
 	 * @return Sample Object List
 	 * @exception Exception
@@ -82,6 +89,7 @@ public interface SampleMapper {
 
 	/**
 	 * Count number of rows
+	 * 
 	 * @param searchVO - Search Condition
 	 * @return Number of Samples
 	 * @exception

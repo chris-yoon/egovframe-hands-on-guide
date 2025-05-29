@@ -1,7 +1,7 @@
 package lab;
 
 public interface CustomerService {
-	String getCustName(String id);
-	String getCustGrade(String id);
+	String getCustomerName(String id);
+	String getCustomerGrade(String id);
 }
 

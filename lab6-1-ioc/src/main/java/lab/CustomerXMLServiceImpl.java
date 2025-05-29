@@ -1,18 +1,18 @@
 package lab;
 
 public class CustomerXMLServiceImpl implements CustomerService {
-	 
+
 	private CustomerXMLDAO xmlDAO;
-	
-	public void setCustXMLDAO(CustomerXMLDAO cxmlDAO) {
-	        this.xmlDAO = cxmlDAO;
+
+	public void setCustomerXMLDAO(CustomerXMLDAO cxmlDAO) {
+		this.xmlDAO = cxmlDAO;
 	}
 
-	public String getCustName(String id){
-		return xmlDAO.getCustName(id);
+	public String getCustomerName(String id) {
+		return xmlDAO.getCustomerName(id);
 	}
 
-	public String getCustGrade(String id) {
-		return xmlDAO.getCustGrade(id);
+	public String getCustomerGrade(String id) {
+		return xmlDAO.getCustomerGrade(id);
 	}
 }

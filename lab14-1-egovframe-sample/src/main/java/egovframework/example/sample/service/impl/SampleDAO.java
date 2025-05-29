@@ -20,7 +20,7 @@ import java.util.List;
 import egovframework.example.sample.service.SampleDefaultVO;
 import egovframework.example.sample.service.SampleVO;
 
-import egovframework.rte.psl.dataaccess.EgovAbstractDAO;
+import org.egovframe.rte.psl.dataaccess.EgovAbstractDAO;
 
 import org.springframework.stereotype.Repository;
 
@@ -29,16 +29,16 @@ import org.springframework.stereotype.Repository;
  * @Description : Sample DAO Class
  * @Modification Information
  * @
- * @  Modified Date      Modifier    Description
- * @ --------------      ---------   -------------------------------
- * @ 2009.03.16                      Initial Commit
+ *   @ Modified Date Modifier Description
+ *   @ -------------- --------- -------------------------------
+ *   @ 2009.03.16 Initial Commit
  *
  * @author eGovFrame Runtime Environment Team
  * @since 2009. 03.16
  * @version 1.0
  * @see
  *
- *  Copyright (C) by MOPAS All right reserved.
+ *      Copyright (C) by MOPAS All right reserved.
  */
 
 @Repository("sampleDAO")
@@ -46,6 +46,7 @@ public class SampleDAO extends EgovAbstractDAO {
 
 	/**
 	 * Insert
+	 * 
 	 * @param vo - Sample Value Object SampleVO
 	 * @return Generated ID
 	 * @exception Exception
@@ -56,6 +57,7 @@ public class SampleDAO extends EgovAbstractDAO {
 
 	/**
 	 * Update
+	 * 
 	 * @param vo - Sample Value Object SampleVO
 	 * @return void type
 	 * @exception Exception
@@ -66,6 +68,7 @@ public class SampleDAO extends EgovAbstractDAO {
 
 	/**
 	 * Delete
+	 * 
 	 * @param vo - Sample Value Object SampleVO
 	 * @return void type
 	 * @exception Exception
@@ -76,6 +79,7 @@ public class SampleDAO extends EgovAbstractDAO {
 
 	/**
 	 * Select single row
+	 * 
 	 * @param vo - Value Object SampleVO
 	 * @return Sample Object
 	 * @exception Exception
@@ -86,6 +90,7 @@ public class SampleDAO extends EgovAbstractDAO {
 
 	/**
 	 * Select multiple rows
+	 * 
 	 * @param searchVO - Search Condition
 	 * @return Sample List
 	 * @exception Exception
@@ -96,6 +101,7 @@ public class SampleDAO extends EgovAbstractDAO {
 
 	/**
 	 * Count number of rows
+	 * 
 	 * @param searchVO - Search Condition
 	 * @return Count of Samples
 	 * @exception

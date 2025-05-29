@@ -22,10 +22,10 @@ public class CustomerServiceTest {
 	@Test
 	public void testMain() {
 		
-		assertEquals(customer.getCustName("1"),"1 eGovFrame Annotation");
-		assertEquals(customer.getCustGrade("1"),"1 S Annotation");
+		assertEquals("1 eGovFrame Annotation", customer.getCustomerName("1"));
+		assertEquals("1 S Annotation", customer.getCustomerGrade("1"));
 		
-		assertEquals(xmlcustomer.getCustName("1"),"1 eGovFrame XML");
-		assertEquals(xmlcustomer.getCustGrade("1"),"1 S XML");
+		assertEquals("1 eGovFrame XML", xmlcustomer.getCustomerName("1"));
+		assertEquals("1 S XML", xmlcustomer.getCustomerGrade("1"));
 	}
 }

@@ -13,34 +13,34 @@ import lab.web.model.Person;
 
 @Controller
 public class PersonServiceController {
-	
+
 	private String formView = "person/personForm";
 	private String successView = "person/personSuccess";
-	
+
 	@Autowired
 	private DefaultBeanValidator beanValidator;
 
 	@RequestMapping(value = "/validator.do")
-	protected String getValidator() throws Exception{
+	protected String getValidator() throws Exception {
 		return "validator";
 	}
 
-	@RequestMapping(value = "/person.do", method=RequestMethod.GET)
-	protected String personInput(ModelMap model) throws Exception{
-		model.addAttribute("person",new Person());
+	@RequestMapping(value = "/person.do", method = RequestMethod.GET)
+	protected String personInput(ModelMap model) throws Exception {
+		model.addAttribute("person", new Person());
 		return formView;
 	}
-	
-	@RequestMapping(value = "/person.do", method=RequestMethod.POST)
-	protected String regist(@ModelAttribute("person") Person person, 
-			  BindingResult errors, ModelMap model) throws Exception {
 
-	    beanValidator.validate(person, errors);
+	@RequestMapping(value = "/person.do", method = RequestMethod.POST)
+	protected String regist(@ModelAttribute("person") Person person,
+			BindingResult errors, ModelMap model) throws Exception {
+
+		beanValidator.validate(person, errors);
 		if (errors.hasErrors()) {
 			return formView;
 		}
 
-		model.addAttribute("pinfo",person);
+		model.addAttribute("pinfo", person);
 		return successView;
 	}
 

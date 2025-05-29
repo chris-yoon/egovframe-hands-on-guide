@@ -8,8 +8,8 @@ import org.springframework.web.servlet.ModelAndView;
 public class HelloWorldController {
 
 	private String viewName = "hello/helloworld";
-	
-	public String getViewName(){
+
+	public String getViewName() {
 		return this.viewName;
 	}
 

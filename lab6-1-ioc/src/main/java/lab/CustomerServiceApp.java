@@ -8,15 +8,15 @@ public class CustomerServiceApp {
 		String configLocation = "classpath*:META-INF/spring/context-*.xml";
 		ApplicationContext context = new ClassPathXmlApplicationContext(configLocation);
 		
-		CustomerService CustomerXML=(CustomerService)context.getBean("customerXML");
+		CustomerService customerXML=(CustomerService)context.getBean("customerXML");
 		System.out.println("[XML]");
-		System.out.println("NAME="+CustomerXML.getCustName("1"));
-		System.out.println("GRADE="+CustomerXML.getCustGrade("1"));
+		System.out.println("NAME="+customerXML.getCustomerName("1"));
+		System.out.println("GRADE="+customerXML.getCustomerGrade("1"));
 		
-		CustomerService CustomerAnnotation = (CustomerService)context.getBean("customer");
+		CustomerService customerAnnotation = (CustomerService)context.getBean("customer");
 		
 		System.out.println("[Annotation]");
-		System.out.println("NAME="+CustomerAnnotation.getCustName("2"));
-		System.out.println("GRADE="+CustomerAnnotation.getCustGrade("2"));
+		System.out.println("NAME="+customerAnnotation.getCustomerName("2"));
+		System.out.println("GRADE="+customerAnnotation.getCustomerGrade("2"));
 	}
 }

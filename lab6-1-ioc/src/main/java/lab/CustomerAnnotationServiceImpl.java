@@ -7,14 +7,14 @@ import org.springframework.stereotype.Service;
 @Service("customer")
 public class CustomerAnnotationServiceImpl implements CustomerService {
 
-	@Resource(name="customerdao")
+	@Resource(name = "customerdao")
 	private CustomerAnnotationDAO customerdao;
 
-	public String getCustName(String id) {			
-		return customerdao.getCustName(id);
+	public String getCustomerName(String id) {
+		return customerdao.getCustomerName(id);
 	}
 
-	public String getCustGrade(String id) {
-		return customerdao.getCustGrade(id);
+	public String getCustomerGrade(String id) {
+		return customerdao.getCustomerGrade(id);
 	}
 }

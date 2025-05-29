@@ -21,8 +21,8 @@ import egovframework.example.sample.service.EgovSampleService;
 import egovframework.example.sample.service.SampleDefaultVO;
 import egovframework.example.sample.service.SampleVO;
 
-import egovframework.rte.fdl.property.EgovPropertyService;
-import egovframework.rte.ptl.mvc.tags.ui.pagination.PaginationInfo;
+import org.egovframe.rte.fdl.property.EgovPropertyService;
+import org.egovframe.rte.ptl.mvc.tags.ui.pagination.PaginationInfo;
 
 import javax.annotation.Resource;
 
@@ -42,16 +42,16 @@ import org.springmodules.validation.commons.DefaultBeanValidator;
  * @Description : EgovSample Controller Class
  * @Modification Information
  * @
- * @  Modified Date      Modifier    Description
- * @ --------------      ---------   -------------------------------
- * @ 2009.03.16                      Initial Commit
+ *   @ Modified Date Modifier Description
+ *   @ -------------- --------- -------------------------------
+ *   @ 2009.03.16 Initial Commit
  *
  * @author eGovFrame Runtime Environment Team
  * @since 2009. 03.16
  * @version 1.0
  * @see
  *
- *  Copyright (C) by MOPAS All right reserved.
+ *      Copyright (C) by MOPAS All right reserved.
  */
 
 @Controller
@@ -71,13 +71,15 @@ public class EgovSampleController {
 
 	/**
 	 * Select multiple rows (pageing)
+	 * 
 	 * @param searchVO - Search Condition: SampleDefaultVO
 	 * @param model
 	 * @return "egovSampleList"
 	 * @exception Exception
 	 */
 	@RequestMapping(value = "/egovSampleList.do")
-	public String selectSampleList(@ModelAttribute("searchVO") SampleDefaultVO searchVO, ModelMap model) throws Exception {
+	public String selectSampleList(@ModelAttribute("searchVO") SampleDefaultVO searchVO, ModelMap model)
+			throws Exception {
 
 		/** EgovPropertyService.sample */
 		searchVO.setPageUnit(propertiesService.getInt("pageUnit"));
@@ -105,6 +107,7 @@ public class EgovSampleController {
 
 	/**
 	 * Get Register Page
+	 * 
 	 * @param searchVO - Condition for searching samples
 	 * @param model
 	 * @return "egovSampleRegister"
@@ -118,6 +121,7 @@ public class EgovSampleController {
 
 	/**
 	 * Post data for inserting
+	 * 
 	 * @param sampleVO - Sample Value Object VO
 	 * @param searchVO - Condition Value Object for searching samples
 	 * @param status
@@ -125,7 +129,8 @@ public class EgovSampleController {
 	 * @exception Exception
 	 */
 	@RequestMapping(value = "/addSample.do", method = RequestMethod.POST)
-	public String addSample(@ModelAttribute("searchVO") SampleDefaultVO searchVO, SampleVO sampleVO, BindingResult bindingResult, Model model, SessionStatus status)
+	public String addSample(@ModelAttribute("searchVO") SampleDefaultVO searchVO, SampleVO sampleVO,
+			BindingResult bindingResult, Model model, SessionStatus status)
 			throws Exception {
 
 		// Server-Side Validation
@@ -143,35 +148,40 @@ public class EgovSampleController {
 
 	/**
 	 * Get Update Page
-	 * @param id - id to be updated
+	 * 
+	 * @param id       - id to be updated
 	 * @param searchVO - Condition Value Object for searching samples
 	 * @param model
 	 * @return "egovSampleRegister"
 	 * @exception Exception
 	 */
 	@RequestMapping("/updateSampleView.do")
-	public String updateSampleView(@RequestParam("selectedId") String id, @ModelAttribute("searchVO") SampleDefaultVO searchVO, Model model) throws Exception {
+	public String updateSampleView(@RequestParam("selectedId") String id,
+			@ModelAttribute("searchVO") SampleDefaultVO searchVO, Model model) throws Exception {
 		SampleVO sampleVO = new SampleVO();
 		sampleVO.setId(id);
-		
+
 		model.addAttribute(selectSample(sampleVO, searchVO));
 		return "sample/egovSampleRegister";
 	}
 
 	/**
 	 * Select single row
+	 * 
 	 * @param sampleVO - Sample Value Object VO to be selcted
 	 * @param searchVO - Condition Value Object for searching samples
 	 * @param status
 	 * @return @ModelAttribute("sampleVO") - Sample Value Object VO filled from DB
 	 * @exception Exception
 	 */
-	public SampleVO selectSample(SampleVO sampleVO, @ModelAttribute("searchVO") SampleDefaultVO searchVO) throws Exception {
+	public SampleVO selectSample(SampleVO sampleVO, @ModelAttribute("searchVO") SampleDefaultVO searchVO)
+			throws Exception {
 		return sampleService.selectSample(sampleVO);
 	}
 
 	/**
 	 * Post data for updating
+	 * 
 	 * @param sampleVO - Sample Value Object VO to be updated
 	 * @param searchVO - Condition Value Object for searching samples
 	 * @param status
@@ -179,7 +189,8 @@ public class EgovSampleController {
 	 * @exception Exception
 	 */
 	@RequestMapping("/updateSample.do")
-	public String updateSample(@ModelAttribute("searchVO") SampleDefaultVO searchVO, SampleVO sampleVO, BindingResult bindingResult, Model model, SessionStatus status)
+	public String updateSample(@ModelAttribute("searchVO") SampleDefaultVO searchVO, SampleVO sampleVO,
+			BindingResult bindingResult, Model model, SessionStatus status)
 			throws Exception {
 
 		beanValidator.validate(sampleVO, bindingResult);
@@ -196,6 +207,7 @@ public class EgovSampleController {
 
 	/**
 	 * Post data for deleting
+	 * 
 	 * @param sampleVO - Sample Value Object VO to be deleted
 	 * @param searchVO - Condition Value Object for searching samples
 	 * @param status
@@ -203,7 +215,8 @@ public class EgovSampleController {
 	 * @exception Exception
 	 */
 	@RequestMapping("/deleteSample.do")
-	public String deleteSample(SampleVO sampleVO, @ModelAttribute("searchVO") SampleDefaultVO searchVO, SessionStatus status) throws Exception {
+	public String deleteSample(SampleVO sampleVO, @ModelAttribute("searchVO") SampleDefaultVO searchVO,
+			SessionStatus status) throws Exception {
 		sampleService.deleteSample(sampleVO);
 		status.setComplete();
 		return "forward:/egovSampleList.do";

@@ -22,21 +22,22 @@ import java.util.List;
  * @Description : EgovSampleService Class
  * @Modification Information
  * @
- * @  Modified Date      Modifier    Description
- * @ --------------      ---------   -------------------------------
- * @ 2009.03.16                      Initial Commit
+ *   @ Modified Date Modifier Description
+ *   @ -------------- --------- -------------------------------
+ *   @ 2009.03.16 Initial Commit
  *
  * @author eGovFrame Runtime Environment Team
  * @since 2009. 03.16
  * @version 1.0
  * @see
  *
- *  Copyright (C) by MOPAS All right reserved.
+ *      Copyright (C) by MOPAS All right reserved.
  */
 public interface EgovSampleService {
 
 	/**
 	 * Insert
+	 * 
 	 * @param vo - Sample Value Object SampleVO
 	 * @return Generated ID
 	 * @exception Exception
@@ -45,6 +46,7 @@ public interface EgovSampleService {
 
 	/**
 	 * Update
+	 * 
 	 * @param vo - Sample Value Object SampleVO
 	 * @return void type
 	 * @exception Exception
@@ -53,6 +55,7 @@ public interface EgovSampleService {
 
 	/**
 	 * Delete
+	 * 
 	 * @param vo - Sample Value Object SampleVO
 	 * @return void type
 	 * @exception Exception
@@ -61,6 +64,7 @@ public interface EgovSampleService {
 
 	/**
 	 * Select single row
+	 * 
 	 * @param vo - Value Object SampleVO
 	 * @return Sample Object
 	 * @exception Exception
@@ -69,6 +73,7 @@ public interface EgovSampleService {
 
 	/**
 	 * Select multiple rows
+	 * 
 	 * @param searchVO - Search Condition
 	 * @return Sample Object List
 	 * @exception Exception
@@ -77,6 +82,7 @@ public interface EgovSampleService {
 
 	/**
 	 * Count number of rows
+	 * 
 	 * @param searchVO - Search Condition
 	 * @return Number of Samples
 	 * @exception

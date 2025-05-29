@@ -20,16 +20,16 @@ package egovframework.example.sample.service;
  * @Description : SampleVO Class
  * @Modification Information
  * @
- * @  Modified Date      Modifier    Description
- * @ --------------      ---------   -------------------------------
- * @ 2009.03.16                      Initial Commit
+ *   @ Modified Date Modifier Description
+ *   @ -------------- --------- -------------------------------
+ *   @ 2009.03.16 Initial Commit
  *
  * @author eGovFrame Runtime Environment Team
  * @since 2009. 03.16
  * @version 1.0
  * @see
  *
- *  Copyright (C) by MOPAS All right reserved.
+ *      Copyright (C) by MOPAS All right reserved.
  */
 public class SampleVO extends SampleDefaultVO {
 
@@ -44,7 +44,7 @@ public class SampleVO extends SampleDefaultVO {
 	/** DESCRIPTION */
 	private String description;
 
-	/** Use? (YES OR NO)*/
+	/** Use? (YES OR NO) */
 	private String useYn;
 
 	/** Register */
