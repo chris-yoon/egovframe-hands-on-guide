@@ -20,34 +20,34 @@ package egovframework.example.sample.service;
  * @Description : SampleVO Class
  * @Modification Information
  * @
- *   @ Modified Date Modifier Description
- *   @ -------------- --------- -------------------------------
- *   @ 2009.03.16 Initial Commit
+ * @  수정일      수정자              수정내용
+ * @ ---------   ---------   -------------------------------
+ * @ 2009.03.16           최초생성
  *
- * @author eGovFrame Runtime Environment Team
+ * @author 개발프레임웍크 실행환경 개발팀
  * @since 2009. 03.16
  * @version 1.0
  * @see
  *
- *      Copyright (C) by MOPAS All right reserved.
+ *  Copyright (C) by MOPAS All right reserved.
  */
 public class SampleVO extends SampleDefaultVO {
 
 	private static final long serialVersionUID = 1L;
 
-	/** ID */
+	/** 아이디 */
 	private String id;
 
-	/** NAME */
+	/** 이름 */
 	private String name;
 
-	/** DESCRIPTION */
+	/** 내용 */
 	private String description;
 
-	/** Use? (YES OR NO) */
+	/** 사용여부 */
 	private String useYn;
 
-	/** Register */
+	/** 등록자 */
 	private String regUser;
 
 	public String getId() {

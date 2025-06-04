@@ -22,7 +22,7 @@ function save(form){
 </head>
 <body>
 <h1>Employee</h1>
-<form:form commandName="person">
+<form:form modelAttribute="person">
     <div><spring:message code="label.name" /> : 
     <form:input path="name"/><form:errors path="name" /></div><br>
     <div><spring:message code="label.company" /> : 

@@ -6,14 +6,14 @@
 <%
   /**
   * @Class Name : egovSampleList.jsp
-  * @Description : Sample List Page
+  * @Description : Sample List 화면
   * @Modification Information
   *
- * @  Modified Date      Modifier    Description
- * @ --------------      ---------   -------------------------------
- * @ 2009.02.01                      Initial Commit
+  *   수정일         수정자                   수정내용
+  *  -------    --------    ---------------------------
+  *  2009.02.01            최초 생성
   *
-  * author eGovFrame Runtime Environment Team
+  * author 실행환경 개발팀
   * since 2009.02.01
   *
   * Copyright (C) 2009 by MOPAS  All right reserved.
@@ -27,26 +27,26 @@
     <link type="text/css" rel="stylesheet" href="<c:url value='/css/egovframework/sample.css'/>"/>
     <script type="text/javaScript" language="javascript" defer="defer">
         <!--
-        /* page function for updating */
+        /* 글 수정 화면 function */
         function fn_egov_select(id) {
         	document.listForm.selectedId.value = id;
            	document.listForm.action = "<c:url value='/updateSampleView.do'/>";
            	document.listForm.submit();
         }
         
-        /* page function for registering */
+        /* 글 등록 화면 function */
         function fn_egov_addView() {
            	document.listForm.action = "<c:url value='/addSample.do'/>";
            	document.listForm.submit();
         }
         
-        /* page function for selecting sample list */
+        /* 글 목록 화면 function */
         function fn_egov_selectList() {
         	document.listForm.action = "<c:url value='/egovSampleList.do'/>";
            	document.listForm.submit();
         }
         
-        /* pagination function */
+        /* pagination 페이지 링크 function */
         function fn_egov_link_page(pageNo){
         	document.listForm.pageIndex.value = pageNo;
         	document.listForm.action = "<c:url value='/egovSampleList.do'/>";
@@ -58,16 +58,16 @@
 </head>
 
 <body style="text-align:center; margin:0 auto; display:inline; padding-top:100px;">
-    <form:form commandName="searchVO" id="listForm" name="listForm" method="post">
+    <form:form modelAttribute="searchVO" id="listForm" name="listForm" method="get">
         <input type="hidden" name="selectedId" />
         <div id="content_pop">
-        	<!-- title -->
+        	<!-- 타이틀 -->
         	<div id="title">
         		<ul>
         			<li><img src="<c:url value='/images/egovframework/example/title_dot.gif'/>" alt=""/><spring:message code="list.sample" /></li>
         		</ul>
         	</div>
-        	<!-- // title -->
+        	<!-- // 타이틀 -->
         	<div id="search">
         		<ul>
         			<li>

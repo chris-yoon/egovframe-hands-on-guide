@@ -9,11 +9,11 @@
   * @Description : Sample Register 화면
   * @Modification Information
   *
- * @  Modified Date      Modifier    Description
- * @ --------------      ---------   -------------------------------
- * @ 2009.02.01                      Initial Commit
+  *   수정일         수정자                   수정내용
+  *  -------    --------    ---------------------------
+  *  2009.02.01            최초 생성
   *
-  * author eGovFrame Runtime Environment Team
+  * author 실행환경 개발팀
   * since 2009.02.01
   *
   * Copyright (C) 2009 by MOPAS  All right reserved.
@@ -35,19 +35,20 @@
     
     <script type="text/javaScript" language="javascript" defer="defer">
         <!--
-        /* page function for selecting sample list */
+        /* 글 목록 화면 function */
         function fn_egov_selectList() {
            	document.detailForm.action = "<c:url value='/egovSampleList.do'/>";
+           	document.detailForm.method = 'get';
            	document.detailForm.submit();
         }
         
-        /* page function for deleting */
+        /* 글 삭제 function */
         function fn_egov_delete() {
            	document.detailForm.action = "<c:url value='/deleteSample.do'/>";
            	document.detailForm.submit();
         }
         
-        /* page function for registering or updating*/
+        /* 글 등록 function */
         function fn_egov_save() {
         	frm = document.detailForm;
         	if(!validateSampleVO(frm)){
@@ -63,9 +64,9 @@
 </head>
 <body style="text-align:center; margin:0 auto; display:inline; padding-top:100px;">
 
-<form:form commandName="sampleVO" id="detailForm" name="detailForm">
+<form:form modelAttribute="sampleVO" id="detailForm" name="detailForm">
     <div id="content_pop">
-    	<!-- title -->
+    	<!-- 타이틀 -->
     	<div id="title">
     		<ul>
     			<li><img src="<c:url value='/images/egovframework/example/title_dot.gif'/>" alt=""/>
@@ -74,7 +75,7 @@
                 </li>
     		</ul>
     	</div>
-    	<!-- // title -->
+    	<!-- // 타이틀 -->
     	<div id="table">
     	<table width="100%" border="1" cellpadding="0" cellspacing="0" style="bordercolor:#D3E2EC; bordercolordark:#FFFFFF; BORDER-TOP:#C2D0DB 2px solid; BORDER-LEFT:#ffffff 1px solid; BORDER-RIGHT:#ffffff 1px solid; BORDER-BOTTOM:#C2D0DB 1px solid; border-collapse: collapse;">
     		<colgroup>
@@ -159,7 +160,7 @@
             </ul>
     	</div>
     </div>
-    <!-- keeping search coditions -->
+    <!-- 검색조건 유지 -->
     <input type="hidden" name="searchCondition" value="<c:out value='${searchVO.searchCondition}'/>"/>
     <input type="hidden" name="searchKeyword" value="<c:out value='${searchVO.searchKeyword}'/>"/>
     <input type="hidden" name="pageIndex" value="<c:out value='${searchVO.pageIndex}'/>"/>

@@ -24,40 +24,40 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
  * @Description : SampleDefaultVO Class
  * @Modification Information
  * @
- *   @ Modified Date Modifier Description
- *   @ -------------- --------- -------------------------------
- *   @ 2009.03.16 Initial Commit
+ * @  수정일      수정자              수정내용
+ * @ ---------   ---------   -------------------------------
+ * @ 2009.03.16           최초생성
  *
- * @author eGovFrame Runtime Environment Team
+ * @author 개발프레임웍크 실행환경 개발팀
  * @since 2009. 03.16
  * @version 1.0
  * @see
  *
- *      Copyright (C) by MOPAS All right reserved.
+ *  Copyright (C) by MOPAS All right reserved.
  */
 public class SampleDefaultVO implements Serializable {
 
 	/**
-	 * serialVersion UID
+	 *  serialVersion UID
 	 */
 	private static final long serialVersionUID = -858838578081269359L;
 
-	/** Search Condition */
+	/** 검색조건 */
 	private String searchCondition = "";
 
-	/** Search Keyword */
+	/** 검색Keyword */
 	private String searchKeyword = "";
 
-	/** Search Use Yes/No */
+	/** 검색사용여부 */
 	private String searchUseYn = "";
 
-	/** Current Page */
+	/** 현재페이지 */
 	private int pageIndex = 1;
 
-	/** Specify the number of peges shown */
+	/** 페이지갯수 */
 	private int pageUnit = 10;
 
-	/** Fetching number of rows per page */
+	/** 페이지사이즈 */
 	private int pageSize = 10;
 
 	/** firstIndex */

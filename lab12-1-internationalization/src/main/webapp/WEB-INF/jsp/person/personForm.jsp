@@ -11,7 +11,7 @@
 
       <body>
         <h1>Employee</h1>
-        <form:form commandName="personinfo">
+        <form:form modelAttribute="personinfo">
           <div>
             <spring:message code="label.name" /> :
             <form:input path="name" />
