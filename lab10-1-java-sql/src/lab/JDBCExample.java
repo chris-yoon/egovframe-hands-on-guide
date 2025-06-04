@@ -12,7 +12,7 @@ public class JDBCExample {
 	public static void main(String[] args) {
 
 		try {
-				Class.forName("com.mysql.jdbc.Driver");
+				Class.forName("com.mysql.cj.jdbc.Driver");
 				System.out.println("Driver Loaded");
 			} catch (ClassNotFoundException e) {
 				System.out.println("Can not find driver class");
